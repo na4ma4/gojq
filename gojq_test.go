@@ -1,7 +1,9 @@
-package gojq
+package gojq_test
 
 import (
 	"testing"
+
+	"github.com/jwilder/gojq"
 )
 
 var jsonArray = `
@@ -40,7 +42,7 @@ var jsonArray = `
 
 func TestParseJsonArray(t *testing.T) {
 
-	parserArray, err := NewStringQuery(jsonArray)
+	parserArray, err := gojq.NewStringQuery(jsonArray)
 	if err != nil {
 		t.Error(err)
 	}
@@ -88,7 +90,7 @@ var jsonObj = `
 
 func TestParseJsonObj(t *testing.T) {
 
-	parserObj, err := NewStringQuery(jsonObj)
+	parserObj, err := gojq.NewStringQuery(jsonObj)
 	if err != nil {
 		t.Error(err)
 	}
